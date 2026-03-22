@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TabSense — Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- ── Header ── -->
+    <header>
+      <div class="brand">
+        <span class="brand-icon">⬡</span>
+        <span class="brand-name">TabSense</span>
+      </div>
+      <span class="page-label">Settings</span>
+    </header>
+
+    <!-- ── Saved Banner ── -->
+    <div class="save-banner" id="saveBanner">✓ Settings saved</div>
+
+    <!-- ── Notifications ── -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">Notifications</div>
+        <div class="section-desc">Control when and how TabSense checks in with you</div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          Enable notifications
+          <span class="field-hint">Coach nudges and focus alerts</span>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="notificationsEnabled" checked />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          Check-in interval
+          <span class="field-hint">How often TabSense analyzes your pattern</span>
+        </div>
+        <select id="checkInterval">
+          <option value="15">Every 15 minutes</option>
+          <option value="30" selected>Every 30 minutes</option>
+          <option value="45">Every 45 minutes</option>
+          <option value="60">Every hour</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- ── Work Hours ── -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">Work hours</div>
+        <div class="section-desc">TabSense only sends notifications during these hours</div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          Day starts
+          <span class="field-hint">No nudges before this time</span>
+        </div>
+        <select id="workStartHour">
+          <option value="6">6:00 AM</option>
+          <option value="7">7:00 AM</option>
+          <option value="8">8:00 AM</option>
+          <option value="9" selected>9:00 AM</option>
+          <option value="10">10:00 AM</option>
+          <option value="11">11:00 AM</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          Day ends
+          <span class="field-hint">No nudges after this time</span>
+        </div>
+        <select id="workEndHour">
+          <option value="18">6:00 PM</option>
+          <option value="19">7:00 PM</option>
+          <option value="20">8:00 PM</option>
+          <option value="21">9:00 PM</option>
+          <option value="22" selected>10:00 PM</option>
+          <option value="23">11:00 PM</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- ── Balance ── -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">Balance tolerance</div>
+        <div class="section-desc">How much leisure time is okay before TabSense nudges you</div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          Entertainment tolerance
+          <span class="field-hint" id="toleranceHint">30% of your day</span>
+        </div>
+        <div class="slider-wrap">
+          <input type="range" id="entertainmentTolerance" min="10" max="60" value="30" step="5" />
+          <div class="slider-labels">
+            <span>Strict</span>
+            <span>Balanced</span>
+            <span>Relaxed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="balance-note" id="balanceNote">
+        💡 At 30%, TabSense will nudge you after about 2.5 hours of leisure in an 8-hour day. That's healthy.
+      </div>
+    </section>
+
+    <!-- ── Data ── -->
+    <section class="section">
+      <div class="section-header">
+        <div class="section-title">Data & Privacy</div>
+        <div class="section-desc">All data stays on your machine — nothing is ever sent anywhere</div>
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          Export today's data
+          <span class="field-hint">Download as JSON</span>
+        </div>
+        <button class="btn btn-secondary" id="exportBtn">Export JSON</button>
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          Clear today's sessions
+          <span class="field-hint">Wipes today's tracking data</span>
+        </div>
+        <button class="btn btn-danger" id="clearBtn">Clear data</button>
+      </div>
+    </section>
+
+    <!-- ── About ── -->
+    <section class="section section-about">
+      <div class="about-row">
+        <span class="about-label">Version</span>
+        <span class="about-val">1.0.0</span>
+      </div>
+      <div class="about-row">
+        <span class="about-label">Storage</span>
+        <span class="about-val" id="storageUsed">Calculating...</span>
+      </div>
+      <div class="about-row">
+        <span class="about-label">Mode</span>
+        <span class="about-val accent">Free · Local only</span>
+      </div>
+      <div class="about-tagline">
+        TabSense tracks your focus so you don't have to think about it.<br/>
+        Built for humans who know balance matters.
+      </div>
+    </section>
+
+    <!-- ── Save ── -->
+    <div class="save-row">
+      <button class="btn btn-primary" id="saveBtn">Save settings</button>
+    </div>
+
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

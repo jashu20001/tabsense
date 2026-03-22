@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TabSense</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="brand">
+      <span class="brand-icon">⬡</span>
+      <span class="brand-name">TabSense</span>
+    </div>
+    <div class="header-right">
+      <span class="live-dot"></span>
+      <span class="live-label">live</span>
+      <button class="icon-btn" id="settingsBtn" title="Settings">⚙</button>
+    </div>
+  </header>
+
+  <!-- ── Focus Score ── -->
+  <section class="score-section">
+    <div class="score-ring-wrap">
+      <svg class="score-ring" viewBox="0 0 100 100">
+        <circle class="ring-bg" cx="50" cy="50" r="42" />
+        <circle class="ring-fill" id="ringFill" cx="50" cy="50" r="42"
+          stroke-dasharray="264"
+          stroke-dashoffset="264"
+        />
+      </svg>
+      <div class="score-inner">
+        <div class="score-number" id="scoreNumber">--</div>
+        <div class="score-label">focus</div>
+      </div>
+    </div>
+    <div class="score-meta">
+      <div class="score-status" id="scoreStatus">Calculating...</div>
+      <div class="active-tab" id="activeTab">—</div>
+    </div>
+  </section>
+
+  <!-- ── Time Breakdown ── -->
+  <section class="breakdown-section">
+    <div class="section-title">Today's breakdown</div>
+    <div class="breakdown-bar" id="breakdownBar">
+      <div class="bar-segment" id="bar-productive" style="width:0%" title="Productive"></div>
+      <div class="bar-segment" id="bar-learning"   style="width:0%" title="Learning"></div>
+      <div class="bar-segment" id="bar-social"     style="width:0%" title="Social"></div>
+      <div class="bar-segment" id="bar-entertainment" style="width:0%" title="Entertainment"></div>
+      <div class="bar-segment" id="bar-neutral"    style="width:0%" title="Neutral"></div>
+    </div>
+    <div class="breakdown-legend" id="breakdownLegend"></div>
+  </section>
+
+  <!-- ── Stats Row ── -->
+  <section class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value" id="statProductiveMins">0m</div>
+      <div class="stat-label">focused</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="statEntertainMins">0m</div>
+      <div class="stat-label">leisure</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" id="statTotalMins">0m</div>
+      <div class="stat-label">tracked</div>
+    </div>
+  </section>
+
+  <!-- ── Timeline ── -->
+  <section class="timeline-section">
+    <div class="section-title">Session timeline</div>
+    <div class="timeline" id="timeline">
+      <div class="timeline-empty">No activity yet today</div>
+    </div>
+  </section>
+
+  <!-- ── Reflection ── -->
+  <section class="reflection-section">
+    <div class="reflection-icon">🧠</div>
+    <div class="reflection-text" id="reflectionText">Loading your day...</div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <button class="check-btn" id="checkBtn">Check in now</button>
+    <span class="footer-date" id="footerDate"></span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

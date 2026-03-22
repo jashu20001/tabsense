@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "TabSense — AI Focus Coach",
+  "version": "1.0.0",
+  "description": "AI-powered focus tracker that coaches your mental balance and warns when you're off track.",
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "notifications",
+    "alarms",
+    "activeTab"
+  ],
+
+  "host_permissions": [
+    "https://api.anthropic.com/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "TabSense"
+  },
+
+  "options_page": "options.html",
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
